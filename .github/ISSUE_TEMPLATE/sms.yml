@@ -1,0 +1,64 @@
+name: Texts still don't arrive
+description: Incoming SMS don't show up, or stop showing up, with flip3_smsready installed.
+labels: ["bug", "sms"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Take phone numbers, IMSIs and message text out of anything you paste. Radio logs are full of them.
+
+  - type: input
+    id: model
+    attributes:
+      label: Phone model
+      placeholder: SM-F711B, SM-F711U, SM-F711N...
+    validations:
+      required: true
+
+  - type: input
+    id: firmware
+    attributes:
+      label: Stock firmware your vendor comes from
+      placeholder: F711BXXSJJZH3
+    validations:
+      required: true
+
+  - type: input
+    id: gsi
+    attributes:
+      label: GSI and version
+      placeholder: Infinity-X 3.12 treble_arm64-ab-VANILLA
+    validations:
+      required: true
+
+  - type: input
+    id: carrier
+    attributes:
+      label: Carrier and country
+      placeholder: Play, Poland
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Do texts never arrive, arrive late, or stop after a while? Can you still send them?
+    validations:
+      required: true
+
+  - type: textarea
+    id: module
+    attributes:
+      label: Module log
+      description: /data/adb/modules/flip3_smsready/smsready.log
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: radio
+    attributes:
+      label: Radio log
+      description: From around the time a text should have arrived, for example with `adb logcat -b radio -d`.
+      render: text

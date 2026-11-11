@@ -1,0 +1,56 @@
+name: A build script fails
+description: One of the scripts in scripts/ stops with an error or produces something that doesn't work.
+labels: ["bug", "build"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Don't attach anything from the firmware or from stock/. The output of the script is enough.
+
+  - type: dropdown
+    id: script
+    attributes:
+      label: Which script?
+      options:
+        - setup-toolchain.sh
+        - extract-stock.sh
+        - build-cover.sh
+        - build-sms.sh
+        - build-ims.sh
+        - build-signout.sh
+    validations:
+      required: true
+
+  - type: input
+    id: system
+    attributes:
+      label: Linux distribution
+      placeholder: Arch Linux, Ubuntu 24.04, Fedora 42...
+    validations:
+      required: true
+
+  - type: input
+    id: firmware
+    attributes:
+      label: Firmware you extracted
+      description: The build number, or the name of the file you gave to extract-stock.sh.
+      placeholder: F711BXXSJJZH3
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Output
+      description: Everything the script printed.
+      render: text
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: files
+    attributes:
+      label: Samsung's files
+      options:
+        - label: I'm not attaching any files from the firmware or from stock/.
+          required: true

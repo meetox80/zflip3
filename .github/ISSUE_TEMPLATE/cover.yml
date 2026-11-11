@@ -1,0 +1,74 @@
+name: Something's wrong on the cover screen
+description: Android shows up on the cover, the launcher crashes or freezes, or something on the cover looks or works differently from One UI.
+labels: ["bug", "cover"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One problem per issue, please. Take phone numbers, names and message text out of anything you paste.
+
+  - type: input
+    id: model
+    attributes:
+      label: Phone model
+      placeholder: SM-F711B, SM-F711U, SM-F711N...
+    validations:
+      required: true
+
+  - type: input
+    id: firmware
+    attributes:
+      label: Stock firmware your vendor comes from
+      description: The build you had flashed before the GSI.
+      placeholder: F711BXXSJJZH3
+    validations:
+      required: true
+
+  - type: input
+    id: gsi
+    attributes:
+      label: GSI and version
+      placeholder: Infinity-X 3.12 treble_arm64-ab-VANILLA
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Module version
+      description: Shown under Flip3 Cover in the Magisk app.
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: And what you expected to happen instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Can you make it happen again?
+      description: The steps, if you know them.
+
+  - type: textarea
+    id: daemon
+    attributes:
+      label: Daemon log
+      description: /data/adb/modules/flip3_cover/coverd.log, or the end of it.
+      render: text
+
+  - type: textarea
+    id: logcat
+    attributes:
+      label: Logcat
+      description: Taken right after it happened, for example with `adb logcat -d -s Flip3Cover AndroidRuntime`.
+      render: text
+
+  - type: textarea
+    id: photos
+    attributes:
+      label: Photo or video of the cover
