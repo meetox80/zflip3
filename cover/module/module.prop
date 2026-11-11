@@ -1,0 +1,6 @@
+id=flip3_cover
+name=Flip3 Cover
+version=0.3.0
+versionCode=3
+author=kotwicha
+description=Keeps Android on the main screen when folded and gives the 512x260 cover its own screen.

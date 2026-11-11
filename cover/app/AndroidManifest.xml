@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="dev.kotwicha.zflip3">
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <application
+        android:label="Flip3 Cover"
+        android:theme="@style/Cover"
+        android:allowBackup="false"
+        android:hardwareAccelerated="true">
+        <activity
+            android:name=".CoverActivity"
+            android:exported="false"
+            android:showWhenLocked="true"
+            android:directBootAware="true"
+            android:launchMode="singleTask"
+            android:excludeFromRecents="true"
+            android:resizeableActivity="true"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|density|keyboardHidden|uiMode|assetsPaths" />
+        <service
+            android:name=".PreviewService"
+            android:exported="false" />
+        <service
+            android:name=".CoverNotificationListener"
+            android:exported="true"
+            android:label="Flip3 Cover"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>
