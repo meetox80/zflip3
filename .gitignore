@@ -1,0 +1,14 @@
+/_dist
+/tools
+/stock
+/build
+/dist
+/signing
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*~
