@@ -1,0 +1,6 @@
+id=flip3_ims
+name=Flip3 VoLTE
+version=0.1.0
+versionCode=1
+author=kotwicha
+description=Runs Samsung's IMS service on the Infinity-X GSI so calls can use VoLTE
