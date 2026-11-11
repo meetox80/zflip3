@@ -1,0 +1,6 @@
+id=flip3_smsready
+name=Flip3 SMS ready
+version=1.0
+versionCode=1
+author=kotwicha
+description=Tells Samsung's radio daemon the phone is ready so incoming texts reach Android
